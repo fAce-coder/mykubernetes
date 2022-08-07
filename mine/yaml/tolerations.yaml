@@ -1,0 +1,18 @@
+#kubectl taint nodes node1 key1=value1:NoExecute
+#kubectl taint nodes node1 key2=value2:NoSchedule
+
+tolerations:
+  - key: "key1"
+    operator: "Equal"
+    value: "value1"
+    effect: "NoExecute"
+    tolerationSeconds: 6000
+
+
+#tolerations:
+#  - key: "node.kubernetes.io/unreachable"
+#    operator: "Exists"
+#    effect: "NoExecute"
+#    tolerationSeconds: 6000
+
+#kubectl taint nodes node1 node.kubernetes.io/unreachable:NoExecute
